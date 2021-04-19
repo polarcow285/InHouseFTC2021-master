@@ -11,15 +11,15 @@ import org.firstinspires.ftc.teamcode.Projects.ProjectMineral;
 public class Teleop extends LinearOpMode {
     private ProjectMineral robot = new ProjectMineral();
 
-    //Setting Variables
-
     @Override
     public void runOpMode() throws InterruptedException {
         robot.init(hardwareMap);
+
+        //wait for the Play button to be pressed
         waitForStart();
 
         while(opModeIsActive()) {
-
+            //teleop code here
 
         }
     }
