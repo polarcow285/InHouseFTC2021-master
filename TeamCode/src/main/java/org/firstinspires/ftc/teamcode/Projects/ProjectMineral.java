@@ -15,10 +15,10 @@ public class ProjectMineral extends Project {
 
         //Define and Initialize Motors
         rightMotor = hwMap.dcMotor.get("rightMotor");
-        leftMotor = hwMap.dcMotor.get("frontLeft");
+        leftMotor = hwMap.dcMotor.get("leftMotor");
 
 
-        intakeMotor = hwMap.dcMotor.get("leftIntake");
+        intakeMotor = hwMap.dcMotor.get("intakeMotor");
 
 
         //Setup Motor directions and Encoder settings
