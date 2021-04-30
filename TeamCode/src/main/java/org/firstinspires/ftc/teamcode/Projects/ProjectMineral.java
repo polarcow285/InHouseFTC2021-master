@@ -6,7 +6,7 @@ public class ProjectMineral extends Project {
     //setting up motors
     public DcMotor rightMotor = null;
     public DcMotor leftMotor = null;
-    public DcMotor intakeMotor = null;
+    //public DcMotor intakeMotor = null;
 
     @Override
     public void init(HardwareMap ahwMap) {
@@ -18,7 +18,8 @@ public class ProjectMineral extends Project {
         leftMotor = hwMap.dcMotor.get("leftMotor");
 
 
-        intakeMotor = hwMap.dcMotor.get("intakeMotor");
+
+        //intakeMotor = hwMap.dcMotor.get("intakeMotor");
 
 
         //Setup Motor directions and Encoder settings
@@ -28,7 +29,7 @@ public class ProjectMineral extends Project {
         leftMotor .setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         rightMotor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
-        intakeMotor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        //intakeMotor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
         leftMotor .setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         rightMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
@@ -40,7 +41,7 @@ public class ProjectMineral extends Project {
         rightMotor.setPower(0);
         leftMotor.setPower(0);
 
-        intakeMotor.setPower(0);
+        //intakeMotor.setPower(0);
     }
 
 }
