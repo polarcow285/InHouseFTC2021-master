@@ -2,7 +2,6 @@ package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
-import com.qualcomm.robotcore.hardware.ColorSensor;
 
 import org.firstinspires.ftc.teamcode.Projects.ProjectMineral;
 
@@ -12,21 +11,18 @@ import org.firstinspires.ftc.teamcode.Projects.ProjectMineral;
 public class Teleop extends LinearOpMode {
     private ProjectMineral robot = new ProjectMineral();
 
-
     @Override
     public void runOpMode() throws InterruptedException {
         robot.init(hardwareMap);
-
 
         //wait for the Play button to be pressed
         waitForStart();
 
         while(opModeIsActive()) {
             //teleop code here
-
             //movement
-            robot.leftMotor.setPower(-0.5 * gamepad1.left_stick_y);
-            robot.rightMotor.setPower(-0.5 * gamepad1.right_stick_y);
+            robot.leftMotor.setPower(gamepad1.left_stick_y);
+            robot.rightMotor.setPower(gamepad1.right_stick_y);
 
             //intake
             /*if(gamepad1.x == true){
@@ -43,12 +39,7 @@ public class Teleop extends LinearOpMode {
 
             else{
                 robot.intakeMotor.setPower(0);
-            }
-
-            */
-
-
-
+            }*/
         }
 
         robot.leftMotor.setPower(0);
