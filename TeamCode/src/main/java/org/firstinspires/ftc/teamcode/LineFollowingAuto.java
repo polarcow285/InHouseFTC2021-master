@@ -33,22 +33,31 @@ public class LineFollowingAuto extends LinearOpMode {
             //moving forward
 
 
-
-            if(rightColorSteven.alpha() <= 143 || leftColorSteven.alpha()<=136){
-                robot.rightMotor.setPower(0.2f);
-                robot.leftMotor.setPower(0.2f);
+            if(rightColorSteven.alpha() <= 143 && leftColorSteven.alpha()<=136){ //LOL THIS IS AN AND SIGN NOWWW :D
+                robot.rightMotor.setPower(0.3f);
+                robot.leftMotor.setPower(0.3f);
             }
             //turning right
-            else if(rightColorSteven.alpha()>= 219){ //this is probably too high LOL <3
-                robot.leftMotor.setPower(0.2f);
-                robot.rightMotor.setPower(0f);
-                sleep(1003);
+            else if(rightColorSteven.alpha()>= 197){ //this is probably too high LOL <3
+                robot.leftMotor.setPower(0.3f);
+                robot.rightMotor.setPower(0.3f);
+                sleep(277);
+                robot.rightMotor.setPower(-0.3f);
+                robot.leftMotor.setPower(0.3f);
+                sleep(777);//too much, like a pretty much lot. test only right turn next time
+
             }
             //turning left
-            else if(leftColorSteven.alpha()>= 293) {
-                robot.rightMotor.setPower(0.2f); //is on white for too short and so it just keeps going turning barely <3 I'M LOSING MY MIND :D
-                robot.leftMotor.setPower(0f);
-                sleep(1003);
+            else if(leftColorSteven.alpha()>= 203) { //also too high LOL
+                robot.rightMotor.setPower(0.3f);
+                robot.leftMotor.setPower(0.3f);
+                sleep(277);
+                robot.rightMotor.setPower(0.3f); //is on white for too short and so it just keeps going turning barely <3 I'M LOSING MY MIND :D
+                robot.leftMotor.setPower(-0.3f);
+                telemetry.addData("test", "pls work");
+                telemetry.update();
+
+                sleep(793);//i think this is a little too much too
             }
 
             /*if(colorSteven.blue()<=97) {
