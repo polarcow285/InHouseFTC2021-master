@@ -30,14 +30,14 @@ public class LineFollowingAuto extends LinearOpMode {
         //Right: 227; left: 128 --> right sensor on tape
 
         while(opModeIsActive()) {
-            //moving forward
+            //two sensors on each side of the robot, if neither sensor senses a certain amount of white, then it will move forward
 
 
             if(rightColorSteven.alpha() <= 143 && leftColorSteven.alpha()<=136){ //LOL THIS IS AN AND SIGN NOWWW :D
                 robot.rightMotor.setPower(0.3f);
                 robot.leftMotor.setPower(0.3f);
             }
-            //turning right
+            //if right sensor (Steven) senses white tape, then it will turn right for ___ milliseconds to emulate a 90 degree turn
             else if(rightColorSteven.alpha()>= 197){ //this is probably too high LOL <3
                 robot.leftMotor.setPower(0.3f);
                 robot.rightMotor.setPower(0.3f);
@@ -47,7 +47,7 @@ public class LineFollowingAuto extends LinearOpMode {
                 sleep(777);//too much, like a pretty much lot. test only right turn next time
 
             }
-            //turning left
+            //if left sensor (also Steven) senses white tape, then it will turn left for ___ milliseconds to emulate a 90 degree turn
             else if(leftColorSteven.alpha()>= 203) { //also too high LOL
                 robot.rightMotor.setPower(0.3f);
                 robot.leftMotor.setPower(0.3f);
@@ -57,8 +57,19 @@ public class LineFollowingAuto extends LinearOpMode {
                 telemetry.addData("test", "pls work");
                 telemetry.update();
 
-                sleep(793);//i think this is a little too much too
+                sleep(793);//i think this is a little too much too...same -angie
             }
+
+            //might add blue start code because it might detect too much white in the BLUE tape
+
+            //red tape end, stop and drop off minerals
+            else if(leftColorSteven.red()>= 180 && rightColorSteven.red()>= 175){
+                robot.leftMotor.setPower(0);
+                robot.rightMotor.setPower(0);
+                //intake stuffs
+                break;
+            }
+
 
             /*if(colorSteven.blue()<=97) {
                 robot.rightMotor.setPower(0);
@@ -69,10 +80,15 @@ public class LineFollowingAuto extends LinearOpMode {
                 robot.leftMotor.setPower(0.5f);
             }
 */
+
+            //print what the amount of color the sensors are sensing on the phone -duck
+            //prints to the phone the amount of white it's sensing -nli
             telemetry.addData("Right", rightColorSteven.alpha());
             telemetry.addData("Left", leftColorSteven.alpha());
             telemetry.update();
         }
+
+        //if opMode isn't active, then the robot will stop
         robot.rightMotor.setPower(0);
         robot.leftMotor.setPower(0);
 
