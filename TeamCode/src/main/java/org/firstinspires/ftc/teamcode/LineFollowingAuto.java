@@ -25,15 +25,16 @@ public class LineFollowingAuto extends LinearOpMode {
         //temporary autonomous
 
 
-        //Right: 135; Left: 131 --> on the ground NO tape
-        //Right: 113; Left: 366 --> left sensor on tape
-        //Right: 227; left: 128 --> right sensor on tape
+        //Right: 105; Left: 193 --> on the ground NO tape
+        //Right: 112; Left: 369 --> left sensor on tape
+        //Right: 212; left: 180 --> right sensor on tape
+
 
         while(opModeIsActive()) {
             //two sensors on each side of the robot, if neither sensor senses a certain amount of white, then it will move forward
 
 
-            if(rightColorSteven.alpha() <= 143 && leftColorSteven.alpha()<=136){ //LOL THIS IS AN AND SIGN NOWWW :D
+            if(rightColorSteven.alpha() <= 143 && leftColorSteven.alpha()<=197){ //LOL THIS IS AN AND SIGN NOWWW :D
                 robot.rightMotor.setPower(0.3f);
                 robot.leftMotor.setPower(0.3f);
             }
@@ -44,7 +45,7 @@ public class LineFollowingAuto extends LinearOpMode {
                 sleep(277);
                 robot.rightMotor.setPower(-0.3f);
                 robot.leftMotor.setPower(0.3f);
-                sleep(777);//too much, like a pretty much lot. test only right turn next time
+                sleep(557);//too much, like a pretty much lot. test only right turn next time
 
             }
             //if left sensor (also Steven) senses white tape, then it will turn left for ___ milliseconds to emulate a 90 degree turn
@@ -63,13 +64,14 @@ public class LineFollowingAuto extends LinearOpMode {
             //might add blue start code because it might detect too much white in the BLUE tape
 
             //red tape end, stop and drop off minerals
+            /*
             else if(leftColorSteven.red()>= 180 && rightColorSteven.red()>= 175){
                 robot.leftMotor.setPower(0);
                 robot.rightMotor.setPower(0);
                 //intake stuffs
                 break;
             }
-
+            */
 
             /*if(colorSteven.blue()<=97) {
                 robot.rightMotor.setPower(0);
