@@ -45,7 +45,7 @@ public class LineFollowingAuto extends LinearOpMode {
                 sleep(277);
                 robot.rightMotor.setPower(-0.3f);
                 robot.leftMotor.setPower(0.3f);
-                sleep(557);//too much, like a pretty much lot. test only right turn next time
+                sleep(576);//too much, like a pretty much lot. test only right turn next time
 
             }
             //if left sensor (also Steven) senses white tape, then it will turn left for ___ milliseconds to emulate a 90 degree turn
@@ -58,20 +58,26 @@ public class LineFollowingAuto extends LinearOpMode {
                 telemetry.addData("test", "pls work");
                 telemetry.update();
 
-                sleep(793);//i think this is a little too much too...same -angie
+                sleep(672);//i think this is a little too much too...same -angie
             }
+
 
             //might add blue start code because it might detect too much white in the BLUE tape
 
             //red tape end, stop and drop off minerals
-            /*
-            else if(leftColorSteven.red()>= 180 && rightColorSteven.red()>= 175){
+
+
+
+
+            //left: 100
+            //right: 77
+            else if(leftColorSteven.red()>= 90 && rightColorSteven.red()>= 90){
                 robot.leftMotor.setPower(0);
                 robot.rightMotor.setPower(0);
                 //intake stuffs
                 break;
             }
-            */
+
 
             /*if(colorSteven.blue()<=97) {
                 robot.rightMotor.setPower(0);
@@ -85,8 +91,10 @@ public class LineFollowingAuto extends LinearOpMode {
 
             //print what the amount of color the sensors are sensing on the phone -duck
             //prints to the phone the amount of white it's sensing -nli
-            telemetry.addData("Right", rightColorSteven.alpha());
-            telemetry.addData("Left", leftColorSteven.alpha());
+            telemetry.addData("Right (white)", rightColorSteven.alpha());
+            telemetry.addData("Left (white)", leftColorSteven.alpha());
+            telemetry.addData("Right (red)", rightColorSteven.red());
+            telemetry.addData("Left (red)", leftColorSteven.red());
             telemetry.update();
         }
 
