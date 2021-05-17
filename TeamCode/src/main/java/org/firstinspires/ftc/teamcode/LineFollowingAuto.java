@@ -45,7 +45,7 @@ public class LineFollowingAuto extends LinearOpMode {
                 sleep(277);
                 robot.rightMotor.setPower(-0.3f);
                 robot.leftMotor.setPower(0.3f);
-                sleep(576);//too much, like a pretty much lot. test only right turn next time
+                sleep(1076);//too much, like a pretty much lot. test only right turn next time
 
             }
             //if left sensor (also Steven) senses white tape, then it will turn left for ___ milliseconds to emulate a 90 degree turn
@@ -58,7 +58,7 @@ public class LineFollowingAuto extends LinearOpMode {
                 telemetry.addData("test", "pls work");
                 telemetry.update();
 
-                sleep(672);//i think this is a little too much too...same -angie
+                sleep(1172);//i think this is a little too much too...same -angie
             }
 
 
