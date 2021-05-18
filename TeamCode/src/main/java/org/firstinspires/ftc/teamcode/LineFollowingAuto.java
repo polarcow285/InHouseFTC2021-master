@@ -33,32 +33,47 @@ public class LineFollowingAuto extends LinearOpMode {
         while(opModeIsActive()) {
             //two sensors on each side of the robot, if neither sensor senses a certain amount of white, then it will move forward
 
+         if(leftColorSteven.red()>= 105 && rightColorSteven.red()>= 104 ){
+                 robot.leftMotor.setPower(0.3f);
+                 robot.rightMotor.setPower(0.3f);
+                 sleep(800);
+                robot.leftMotor.setPower(0);
+                robot.rightMotor.setPower(0);
+                //intake stuffs
+                robot.intakeMotor.setPower(1f);
+                sleep(4000);
+                robot.intakeMotor.setPower(0);
+             robot.leftMotor.setPower(-0.3f);
+             robot.rightMotor.setPower(-0.3f);
+             sleep(3000);
+                break;
+            }
 
-            if(rightColorSteven.alpha() <= 143 && leftColorSteven.alpha()<=197){ //LOL THIS IS AN AND SIGN NOWWW :D
+            else if(rightColorSteven.alpha() <= 143 && leftColorSteven.alpha()<=197){ //LOL THIS IS AN AND SIGN NOWWW :D
                 robot.rightMotor.setPower(0.3f);
                 robot.leftMotor.setPower(0.3f);
             }
             //if right sensor (Steven) senses white tape, then it will turn right for ___ milliseconds to emulate a 90 degree turn
             else if(rightColorSteven.alpha()>= 197){ //this is probably too high LOL <3
-                robot.leftMotor.setPower(0.3f);
-                robot.rightMotor.setPower(0.3f);
-                sleep(277);
+                //robot.leftMotor.setPower(0.3f);
+                //robot.rightMotor.setPower(0.3f);
+                //sleep(147); //277, 177
                 robot.rightMotor.setPower(-0.3f);
                 robot.leftMotor.setPower(0.3f);
-                sleep(1076);//too much, like a pretty much lot. test only right turn next time
+                sleep(776);//too much, like a pretty much lot. test only right turn next time
 
             }
             //if left sensor (also Steven) senses white tape, then it will turn left for ___ milliseconds to emulate a 90 degree turn
             else if(leftColorSteven.alpha()>= 203) { //also too high LOL
-                robot.rightMotor.setPower(0.3f);
-                robot.leftMotor.setPower(0.3f);
-                sleep(277);
+                //robot.rightMotor.setPower(0.3f);
+                //robot.leftMotor.setPower(0.3f);
+                //sleep(147); //277, 177
                 robot.rightMotor.setPower(0.3f); //is on white for too short and so it just keeps going turning barely <3 I'M LOSING MY MIND :D
                 robot.leftMotor.setPower(-0.3f);
                 telemetry.addData("test", "pls work");
                 telemetry.update();
 
-                sleep(1172);//i think this is a little too much too...same -angie
+                sleep(872);//i think this is a little too much too...same -angie
             }
 
 
@@ -69,14 +84,10 @@ public class LineFollowingAuto extends LinearOpMode {
 
 
 
-            //left: 100
-            //right: 77
-            else if(leftColorSteven.red()>= 90 && rightColorSteven.red()>= 90){
-                robot.leftMotor.setPower(0);
-                robot.rightMotor.setPower(0);
-                //intake stuffs
-                break;
-            }
+            //left: 129
+            //right: 135
+            //whiter:100
+            //whitel: 99
 
 
             /*if(colorSteven.blue()<=97) {
